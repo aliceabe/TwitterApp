@@ -1,0 +1,16 @@
+{
+  "name": "twitter-worker",
+  "version": "0.0.1",
+  "author": "aliceberard",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "sqs": "*",
+    "alchemy-api": "*",
+    "sentiment": "*",
+    "mysql": "*",
+    "aws-sdk": "*"
+  }
+}

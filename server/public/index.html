@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+
+	<title>TweetMap</title>
+	
+	<!-- Socket -->
+	<script src="../socket.io/socket.io.js"></script>
+
+	<!-- Highcharts -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+	<!-- JQuery -->
+	<script src="/libs/jquery-1.10.1.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="/libs/bootstrap/js/bootstrap.js"></script>
+	<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/libs/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+	<!-- Google Maps -->
+	<link href="https://google-developers.appspot.com/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
+
+	<!-- Generic CSS -->
+	<link rel="stylesheet" href="css/index.css">
+
+	<!-- JavaScript -->
+	<script src="/js/twitterStream.js" type="text/javascript"></script>
+
+</head>
+
+<body onload="initialize()">
+
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">			
+			<div class="container">
+				<div class="nav-collapse collapse">
+					<div class="btn-group">						
+						<select id="kw" class="btn dropdown-menu">
+							<option value="0">money</option>
+							<option value="1">work</option>
+							<option value="2">blog</option>
+							<option value="3">game of thrones</option>
+							<option value="4">food</option>
+							<option value="5">obama</option>
+							<option value="6">paris</option>
+							<option value="7">music</option>
+							<option value="8">football</option>
+							<option value="9">friends</option>
+							<option value="10">love</option>
+						</select>
+						<select id="mp" class="btn dropdown-menu">
+							<option value="T">TweetMap</option>
+							<option value="S">SentimentMap</option>
+							<option value="R">SentimentTrend</option>
+						</select>
+						<select id="st" class="btn dropdown-menu">
+							<option value="positive">Positive</option>
+							<option value="neutral">Neutral</option>
+							<option value="negative">Negative</option>
+							<option value="undefined">Undefined</option>
+						</select>
+						<span id="pos" class="label label-success">Positive: </span>
+						<span id="neu" class="label label-info">Neutral: </span>
+						<span id="neg" class="label label-important">Negative: </span>
+						<span id="und" class="label label-default">Undefined: </span>
+					</div>					
+				</div>
+			</div>
+			<div class="container">
+				<h4 id="lastweet"></h4>
+				<h6 id="lastinfo"></h6>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div id="map_canvas"></div>
+		<div id="trend" style="width: 800px; height: 500px;"></div>
+	</div>
+</body>
+</html>
